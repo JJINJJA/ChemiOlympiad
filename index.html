@@ -90,24 +90,25 @@
 
         // POST 요청 보내기
         function sendPostRequest() {
-        // POST 요청의 body 데이터
-        const body = {
-                // body 데이터의 내용을 여기에 작성
-         };
+          // POST 요청의 body 데이터
+          const body = {
+            field1: 'value1',
+            field2: 'value2'
+          };
 
-        // POST 요청 설정
-        const requestOptions = {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(body)
-         };
+          // POST 요청 설정
+          const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(body)
+          };
 
-        // API에 POST 요청 보내기
-        fetch(apiUrl, requestOptions)
-                .then(response => response.json())
-                .then(data => console.log(data))
-                .catch(error => console.error(error));
-        }
+          // API에 POST 요청 보내기
+          fetch(apiUrl, requestOptions)
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.error(error));
+        };
         const table = document.createElement('table');
         const header = table.createTHead();
         const row = header.insertRow(0);
@@ -121,10 +122,26 @@
             row.insertCell(1).textContent = record.fields.Name;
         });
 
+        table.appendChild(tbody);
+        document.body.appendChild(table);
+            fetch('https://7198137077.for-seoul.synctreengine.com/getairtablelist', {
+      method: 'POST',});
+        const table = document.createElement('table');
+    const header = table.createTHead();
+    const row = header.insertRow(0);
+    row.insertCell(0).innerHTML = "<b>ID</b>";
+    row.insertCell(1).innerHTML = "<b>Name</b>";
+
+    const tbody = document.createElement('tbody');
+    data.result.records.forEach(record => {
+        const row = tbody.insertRow();
+        row.insertCell(0).textContent = record.id;
+        row.insertCell(1).textContent = record.fields.Name;
+    });
+
     table.appendChild(tbody);
     document.body.appendChild(table);
-        fetch('https://7198137077.for-seoul.synctreengine.com/getairtablelist', {
-  method: 'POST',})
+    
     </script>
 </head>
 <body>
