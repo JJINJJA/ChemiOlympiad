@@ -76,11 +76,55 @@
 
         }
     </style>
+    <script>
+        // API 주소
+        const apiUrl = 'https://7198137077.for-seoul.synctreengine.com/getairtablelist';
+
+        // POST 요청 보내기
+        function sendPostRequest() {
+            // POST 요청의 body 데이터
+            const body = {
+                // body 데이터의 내용을 여기에 작성
+            };
+
+            // POST 요청 설정
+            const requestOptions = {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(body)
+            };
+
+            // API에 POST 요청 보내기
+            fetch(apiUrl, requestOptions)
+                .then(response => response.json())
+                .then(data => console.log(data))
+                .catch(error => console.error(error));
+        }
+        const table = document.createElement('table');
+        const header = table.createTHead();
+        const row = header.insertRow(0);
+        row.insertCell(0).innerHTML = "<b>ID</b>";
+        row.insertCell(1).innerHTML = "<b>Name</b>";
+
+        const tbody = document.createElement('tbody');
+        data.result.records.forEach(record => {
+            const row = tbody.insertRow();
+            row.insertCell(0).textContent = record.id;
+            row.insertCell(1).textContent = record.fields.Name;
+        });
+
+    table.appendChild(tbody);
+    document.body.appendChild(table);
+    </script>
 </head>
 <body>
     <div class="wrap">
+        <!-- HTML 코드 생략 -->
+        <button onclick="sendPostRequest()">API에 POST 요청 보내기</button>
+    </div>
+    <div class="wrap">
         <div class="profile"></div>
-        <h1 class="main">올림피아드 대비</h1>
+        <h1 class="main">취준생을 위한 취업준비</h1>
         <p class="sub">링크 모음</p>
         <a target="_blank" href="https://dongguk.webex.com/m/ca2c7e3a-f550-4040-aa17-1c9688a628b4">웹엑스 미팅</a>
         <a target="_blank" href="https://docs.google.com/document/d/1W4hzLvnnrpAN1pe8qmc3w3hvGCZPeCmUgfErLGjT3Vk/edit">소논문 google docs </a>
@@ -89,6 +133,24 @@
         <a target="_blank" href="https://o365dongguk-my.sharepoint.com/:x:/g/personal/2017112363_student_dongguk_edu/ERZIAhN306BIm6PPTg_KwdYB8WgxIyg701DEcgjer_UINg?e=Gof2iI">링크 엑셀 </a>
         <a target="_blank" >비밀번호 주의 </a>
     </div>
-
+    <table>
+  <thead>
+    <tr>
+      <th>Record ID</th>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- iterate over each record and add a table row -->
+    <!-- with the record ID and name as table cells -->
+    <!-- using template literals to interpolate values -->
+    ${data.result.records.map(record => `
+      <tr>
+        <td>${record.fields['Record ID']}</td>
+        <td>${record.fields.Name}</td>
+      </tr>
+    `).join('')}
+    </tbody>
+    </table>
 </body>
 </html>
