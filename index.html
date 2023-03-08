@@ -2,10 +2,10 @@
 <html>
 <head>
 
-    <meta property="og:title" content="올림피아드 위키">
-    <meta property="og:description" content="링크 모음">
+    <meta property="og:title" content="취업 준비생을 위해">
+    <meta property="og:description" content="분야 ">
     <meta property="og:image" content="구리.png">
-    <title>석유화학올림피아드 - 링크</title>
+    <title>취업 준비를 위한 분야 선택</title>
     <style>
         @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
         * {
@@ -116,57 +116,7 @@
     table.appendChild(tbody);
     document.body.appendChild(table);
         fetch('https://7198137077.for-seoul.synctreengine.com/getairtablelist', {
-  method: 'POST',
-})
-.then(response => response.json())
-.then(data => {
-  const table = document.createElement('table');
-  const headerRow = document.createElement('tr');
-  const nameHeader = document.createElement('th');
-  nameHeader.textContent = 'Name';
-  const ageHeader = document.createElement('th');
-  ageHeader.textContent = 'Age';
-  const emailHeader = document.createElement('th');
-  emailHeader.textContent = 'Email';
-  headerRow.appendChild(nameHeader);
-  headerRow.appendChild(ageHeader);
-  headerRow.appendChild(emailHeader);
-  table.appendChild(headerRow);
-  for (const record of data.records) {
-    const row = document.createElement('tr');
-    const nameCell = document.createElement('td');
-    nameCell.textContent = record.fields.name;
-    const ageCell = document.createElement('td');
-    ageCell.textContent = record.fields.age;
-    const emailCell = document.createElement('td');
-    emailCell.textContent = record.fields.email;
-    row.appendChild(nameCell);
-    row.appendChild(ageCell);
-    row.appendChild(emailCell);
-    table.appendChild(row);
-  }
-  document.body.appendChild(table);
-})
-.catch(error => console.error(error));
-            <table>
-  <thead>
-    <tr>
-      <th>Record ID</th>
-      <th>Name</th>
-    </tr>
-  </thead>
-  <tbody>
-    <!-- iterate over each record and add a table row -->
-    <!-- with the record ID and name as table cells -->
-    <!-- using template literals to interpolate values -->
-    ${data.result.records.map(record => `
-      <tr>
-        <td>${record.fields['Record ID']}</td>
-        <td>${record.fields.Name}</td>
-      </tr>
-    `).join('')}
-    </tbody>
-    </table>
+  method: 'POST',})
     </script>
 </head>
 <body>
@@ -178,12 +128,12 @@
         <div class="profile"></div>
         <h1 class="main">취준생을 위한 취업준비</h1>
         <p class="sub">링크 모음</p>
-        <a target="_blank" href="https://dongguk.webex.com/m/ca2c7e3a-f550-4040-aa17-1c9688a628b4">웹엑스 미팅</a>
-        <a target="_blank" href="https://docs.google.com/document/d/1W4hzLvnnrpAN1pe8qmc3w3hvGCZPeCmUgfErLGjT3Vk/edit">소논문 google docs </a>
-        <a target="_blank" href="https://o365dongguk-my.sharepoint.com/:f:/g/personal/2017112363_student_dongguk_edu/Ejbegm41Q6hAtnWsYgPaA64BTAmaQpAT_Aa9ylm35owXwA?e=k0pa6W">공유폴더 </a>
-        <a target="_blank" href="https://o365dongguk-my.sharepoint.com/:w:/g/personal/2017112363_student_dongguk_edu/EYqvB_s0QIJIutuFIr9Q_gEBnY667zgH7aoapJYnuW_vwg?e=srMtc4">계획서 워드</a>
-        <a target="_blank" href="https://o365dongguk-my.sharepoint.com/:x:/g/personal/2017112363_student_dongguk_edu/ERZIAhN306BIm6PPTg_KwdYB8WgxIyg701DEcgjer_UINg?e=Gof2iI">링크 엑셀 </a>
-        <a target="_blank" >비밀번호 주의 </a>
+        <a target="_blank" href="https://www.jobkorea.co.kr/?utm_source=google&utm_medium=cpc&utm_campaign=PC_%EB%B8%8C%EB%9E%9C%EB%93%9C&utm_content=PC_%EB%B8%8C%EB%9E%9C%EB%93%9C&utm_term=%EC%9E%A1%EC%BD%94%EB%A6%AC%EC%95%84&cmpid=sa_google&gclid=Cj0KCQiAgaGgBhC8ARIsAAAyLfFhabiywBUdsT5r97nvpsYeLA0bteZiGYYAXCY2ViZIGtWwAoO78JAaApIfEALw_wcB">취업공고보기</a>
+        <a target="_blank" href="https://jasoseol.com/?ad_source=google_ads&gclid=Cj0KCQiAgaGgBhC8ARIsAAAyLfHd1pWX8DuvUE5KlAA4JdsrOM7nHm16Dsr33Pi3OExwDZHXugM__wsaAh1VEALw_wcB">자소서 쓰기 </a>
+        <a target="_blank" href="https://comento.kr/job-questions?utm_source=ppc-google-search&utm_medium=ad-text&utm_campaign=kr-s1awa-ppc-gsn-auto-web-all-cnv-brand-comento-kr-b&utm_content=evergreen-kdwcomento-u-2129&gclid=Cj0KCQiAgaGgBhC8ARIsAAAyLfGebqhHxlZBJLB0zgJjpR9an4Ftl-JPY4pLj09IPuBeezQ043DVHD0aAuyZEALw_wcB">직무경험 찾기 </a>
+        <a target="_blank" href="https://www.youtube.com/watch?v=eGv5EAMF8OQ">자소서 기초 영상</a>
+        <a target="_blank" href="https://www.youtube.com/watch?v=qqurag5IknU">면접 기초 영상 </a>
+        <a target="_blank" >당신의 취업과 이직을 응원합니다! </a>
     </div>
 </body>
 </html>
